@@ -91,7 +91,6 @@ def full?
   end
 end
 end
-end
 
 def play
   while over? == false
