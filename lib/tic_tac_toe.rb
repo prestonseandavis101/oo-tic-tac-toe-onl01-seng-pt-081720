@@ -62,6 +62,7 @@ class TicTacToe
    else
    turn
  end
+ end
  
  def won?
    WIN_COMBINATIONS.detect do|x|
