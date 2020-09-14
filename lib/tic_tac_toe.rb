@@ -62,12 +62,16 @@ class TicTacToe
    else
    turn
  end
+ end
  
  def won?
    WIN_COMBINATIONS.detect do|x|
-@board[x[0]] == @board[x[1]] && @board[x[1]] == @board[x[2]]
- end
+    if @board[x[0]] != " " && @board[x[0]] == @board[x[1]] && @board[x[1]] == @board[x[2]]
+      return x
+    end
+  end
 end
+
 def full?
   @board.all?{|occupied| occupied != " "}
  end
@@ -80,26 +84,22 @@ def full?
  end
  
  def winner
-   WIN_COMBINATIONS.detect do|x|
-   if (@board[x[0]]) == "X" && (@board[x[1]]) == "X" && (@board[x[2]]) == "X"
-    return "X"
-   elsif (@board[x[0]]) == "O" && (@board[x[1]]) == "O" && (@board[x[2]]) == "O"
-    return "O"
-   else 
-     nil 
-  end
-end
-end
+    if won?
+      win_combo = won?
+      return @board[win_combo[0]]
+     else 
+      return nil 
+    end
 end
 
-def play
-  while over? == false
-  turn
-end
-if won?
-  puts "Congratulations #{winner}!"
-else draw?
-puts "Cat's Game!"
-end
-end 
+  def play
+    while over? == false
+      turn
+    end
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
+  end 
 end
