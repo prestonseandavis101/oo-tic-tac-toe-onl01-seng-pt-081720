@@ -82,14 +82,14 @@ def full?
  
  def winner
    WIN_COMBINATIONS.detect do|x|
-   if (@board[x[0]]) == "X" && (@board[x[1]]) == "X" && (@board[x[2]]) == "X"
-    return "X"
-   elsif (@board[x[0]]) == "O" && (@board[x[1]]) == "O" && (@board[x[2]]) == "O"
-    return "O"
-   else 
-     nil 
+     if (@board[x[0]]) == "X" && (@board[x[1]]) == "X" && (@board[x[2]]) == "X"
+      return "X"
+     elsif (@board[x[0]]) == "O" && (@board[x[1]]) == "O" && (@board[x[2]]) == "O"
+      return "O"
+     else 
+       nil 
+    end
   end
-end
 end
 
   def play
