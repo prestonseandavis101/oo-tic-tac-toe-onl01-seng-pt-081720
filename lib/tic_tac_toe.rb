@@ -92,14 +92,14 @@ def full?
 end
 end
 
-def play
-  while over? == false
-    turn
-  end
-  if won?
-    puts "Congratulations #{winner}!"
-  else draw?
-    puts "Cat's Game!"
+  def play
+    while over? == false
+      turn
     end
-end 
+    if won?
+      puts "Congratulations #{winner}!"
+    elsif draw?
+      puts "Cat's Game!"
+    end
+  end 
 end
