@@ -94,7 +94,7 @@ end
 
 def play
   while over? == false
-  turn
+    turn
 end
 if won?
   puts "Congratulations #{winner}!"
